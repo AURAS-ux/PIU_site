@@ -7,15 +7,27 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './pages/home/home.component';
 import { InventoryComponent } from './pages/inventory/inventory.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormComponent } from './pages/form/form.component';
+import { FormsModule } from '@angular/forms';
+import {MatFormFieldModule } from '@angular/material/form-field';
+import {ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     HomeComponent,
-    InventoryComponent
+    InventoryComponent,
+    FormComponent
   ],
   imports: [
+    HttpClientModule,
+    FormsModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    ReactiveFormsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule
