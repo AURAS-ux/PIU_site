@@ -1,11 +1,14 @@
-<div class="items">
-    <div *ngFor="let item of items" class="item">
-        <p>Name: {{item}}</p>
-        <p>Description: {{item}}</p>
-        <p>Quantity: {{item}}</p>
-        <button>delete</button>
-        <button>edit</button>
-    </div>
+<div id="top_side">
+    <p id="top_side_text">Welcome to the future</p>
+    <button mat-raised-button color="accent" (click)="openDialog()" id="button_add">add</button>
 </div>
 
-<button mat-raised-button color="accent" (click)="openDialog()">add</button>
+<div class="items">
+    <div *ngFor="let item of items" class="item">
+        <p>Name: {{item.name}}</p>
+        <p>Description: {{item.description}}</p>
+        <p>Quantity: {{item.quantity}}</p>
+        <button id="delete_button">delete</button>
+        <button id="edit_button">edit</button>
+    </div>
+</div>

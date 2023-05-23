@@ -10,50 +10,11 @@ import { Item } from 'src/models/item';
   styleUrls: ['./inventory.component.scss']
 })
 export class InventoryComponent implements OnInit {
-  items:string[] = [
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea",
-    "Vanea"
+  items:Item[] = [
+    {id:190,name:"Item 1",description:"La fel",quantity:100},
+    {id:191,name:"Item 2",description:"La fel",quantity:200},
+    {id:193,name:"Item 3",description:"La fel",quantity:140},
+    {id:194,name:"Item 4",description:"La fel",quantity:190}
   ];
 
   error?:string;
@@ -70,7 +31,7 @@ export class InventoryComponent implements OnInit {
 
   async openDialog(){
     const dialogRef = this.dialog.open(FormComponent,{
-      width: '250px',
+      width: '300px',
       data: {items:this.items},
     });
 
