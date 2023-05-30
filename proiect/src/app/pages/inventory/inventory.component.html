@@ -8,7 +8,7 @@
         <p>Name: {{item.name}}</p>
         <p>Description: {{item.description}}</p>
         <p>Quantity: {{item.quantity}}</p>
-        <button id="delete_button">delete</button>
-        <button id="edit_button">edit</button>
+        <button id="delete_button" (click) = "delete_buttonClick(item)">delete</button>
+        <button id="edit_button" (click) = "openEditDialog()">edit</button>
     </div>
 </div>

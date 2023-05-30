@@ -17,6 +17,6 @@
         <input matInput type="text" formControlName="cantitate" placeholder="cantitate" class="input_box" [(ngModel)]="quantity">
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
     </mat-form-field>
-    <button id="update_button" (click) = "add_buttonClick()">Add</button>
+    <button id="update_button" ngFor* ="let item of items" (click) = "update_buttonClick(item)">Update</button>
     <button id="cancel_button" (click) = "cancel_buttonClick()">Cancel</button>
 </div>

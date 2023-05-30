@@ -13,6 +13,7 @@ import {MatFormFieldModule } from '@angular/material/form-field';
 import {ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import { HttpClientModule} from '@angular/common/http';
+import { EditFormComponent } from './pages/edit-form/edit-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { HttpClientModule} from '@angular/common/http';
     HeaderComponent,
     HomeComponent,
     InventoryComponent,
-    FormComponent
+    FormComponent,
+    EditFormComponent,
   ],
   imports: [
     HttpClientModule,

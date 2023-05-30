@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { FormComponent } from '../form/form.component';
 import { ItemService } from 'src/app/services/item.service';
 import { Item } from 'src/models/item';
+import { EditFormComponent } from '../edit-form/edit-form.component';
 
 @Component({
   selector: 'app-inventory',
@@ -40,6 +41,24 @@ export class InventoryComponent implements OnInit {
     });
   };
 
+  async delete_buttonClick(item:Item){
+    console.log(`Delete button called for item: ${item.name}`);
+    const index = this.items.indexOf(item);
+    if (index !== -1) {
+      this.items.splice(index, 1);
+    }
+  }
+
+  async openEditDialog(){
+    const dialogRef = this.dialog.open(EditFormComponent,{
+      width: '100px',
+      data: {items:this.items},
+    });
+
+    dialogRef.afterClosed().subscribe(()=>{
+      console.log("This log was closed");
+    });
+  }
   ngOnInit():void{
     //this.getItems();
   }

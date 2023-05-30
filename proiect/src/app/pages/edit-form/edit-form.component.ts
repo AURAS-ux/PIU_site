@@ -1,20 +1,22 @@
-import { Component , Inject, OnInit} from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { Item } from 'src/models/item';
 
 @Component({
-  selector: 'app-form',
-  templateUrl: './form.component.html',
-  styleUrls: ['./form.component.scss']
+  selector: 'app-edit-form',
+  templateUrl: './edit-form.component.html',
+  styleUrls: ['./edit-form.component.scss']
 })
-export class FormComponent implements OnInit {
-
+export class EditFormComponent implements OnInit {
+  
   name!: string;
   descriere!: string;
   quantity!: number;
   form!: FormGroup;
+  item!: Item;
   
-  constructor(public dialogRef:MatDialogRef<FormComponent>,
+  constructor(public dialogRef:MatDialogRef<EditFormComponent>,
     @Inject(MAT_DIALOG_DATA) public data:string[],private formBuilder:FormBuilder){}
   
 ngOnInit(): void {
@@ -33,12 +35,13 @@ private createForm():void{
  onNoClick():void{
   this.dialogRef.close();
  }
-
- async add_buttonClick(){
-  console.log(`Add method called!\nData to be added: ${this.name} ${this.descriere} ${this.quantity}`);
- }
+  
  async cancel_buttonClick(){
   this.dialogRef.close();
+ }
+
+ async update_buttonClick(item:Item){
+
  }
 
 }
